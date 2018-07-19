@@ -130,7 +130,31 @@ locale-es-ES.json
 #
 ### Installation and Config
 
-1) Add this package to your local packages folder
+1) Install package. 
+Add following line to your package.json dependencies
+
+```json
+"dependencies": {
+  ...,
+  "ext-locale": "https://github.com/Allriseit/ext-locale"
+}
+```
+and run 
+```
+$ yarn
+```
+or
+```
+$ npm install
+```
+
+Then add next entry after all existing directories to your `workspace.json`.
+This allows sencha builder to locate this package in `node_modules` folder
+```json
+"packages": {
+  "dir": "...,${workspace.dir}/node_modules/ext-locale"
+}
+```
 2) In app.json build profile add localize package as requirement, e.g. 
 
 ```json
